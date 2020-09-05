@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/register_choose.css" %}">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <title>Choose</title>
+
+</head>
+
+<body>
+    <video muted autoplay loop >
+        <source src="{{ MEDIA_URL }}register_back.mp4" type="video/mp4">
+    </video>
+    <div id="bigBox">
+        <h1>请选择至少一部您喜欢的电影</h1>
+                <form action="" method="GET">
+            <ul class="box">
+                <li>
+                    <td>
+                        <img src="{% static "img/fangniuban.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='放牛班的春天' value='放牛班的春天'>放牛班的春天</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/lvpishu.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='绿皮书' value='绿皮书'>绿皮书</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/gangtiexia.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='钢铁侠' value='钢铁侠'>钢铁侠</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/jiqirenzongdongyuan.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='机器人总动员' value='机器人总动员'>机器人总动员</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/meilixinling.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='美丽心灵' value='美丽心灵'>美丽心灵</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/pengranxindong.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='怦然心动' value='怦然心动'>怦然心动</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/wujiandao.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='无间道' value='无间道'>无间道</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/xiaoshideairen.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='消失的爱人' value='消失的爱人'>消失的爱人</p>
+                    </td>
+                </li>
+            </ul>
+            <ul class="box">
+                <li>
+                    <td>
+                        <img src="{% static "img/bawangbieji.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='霸王别姬' value='霸王别姬'>霸王别姬</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/jishengchong.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='寄生虫' value='寄生虫'>寄生虫</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/suduyujiqing.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='速度与激情' value='速度与激情'>速度与激情</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/tangrenjie.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='唐人街探案' value='唐人街探案'>唐人街探案</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/wobushiyaoshen.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='我不是药神' value='我不是药神'>我不是药神</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/liulangdiqiu.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='流浪地球' value='流浪地球'>流浪地球</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/dahufa.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='大护法' value='大护法'>大护法</p>
+                    </td>
+                </li>
+                <li>
+                    <td>
+                        <img src="{% static "img/aganzhengzhuan.jpg" %}" align="bottom">
+                        <p><input type="checkbox" name='阿甘正传' value='阿甘正传'>阿甘正传</p>
+                    </td>
+                </li>
+            </ul>
+            <button type="submit" class="inputButton" >选好了，开启电影之旅</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static "css/register_style.css" %}">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+        <title>Register</title>
+    </head>
+    <body>
+    <video width="100%" muted autoplay loop >
+        <source src="{{ MEDIA_URL }}register_back.mp4" type="video/mp4">
+    </video>
+        <div id="bigBox">
+
+            <h1>REGISTER</h1>
+            <form action={% url 'REGISTER' %} method="post">
+                {% csrf_token %}
+            <div class="inputBox">
+                <div class="inputText">
+                    <input type="text" placeholder="Username" name="username" />
+                </div>
+                <div class="selectlist">
+                    <select style="width:195px" name="gender">
+                        <option value="" style="display: none;" disabled selected>Sex</option>
+                        <option value="male">男</option>
+                        <option value="female">女</option>
+                    </select>
+                </div>
+                <div class="inputText">
+                    <input style="width:195px" type="month" placeholder="Birthday" name="birthday"/>
+                </div>
+                <div class="inputText">
+                    <input type="password" placeholder="Password" name="password"/>
+                </div>
+                <div class="inputText">
+                    <input type="password" placeholder="Confirm password" name="repassword"/>
+                </div>
+                <button type="submit" class="inputButton" value="NEXT" />NEXT</div>
+                <p style="color: aliceblue">{{ error }}</p>
+              </form>
+            {% if result == 'had' %}
+            <p style="text-align: center;color: white;">
+                    用户已注册
+                </p>
+            {% elif result == 'error'%}
+                <p style="text-align: center;color: white;">
+                    两次密码输入不一致
+                </p>
+            {% elif result == 'success' %}
+                <p style="text-align: center;color: white;">
+                    注册成功
+                </p>
+            {% endif %}
+            </div>
+        </div>   
+    </body>
+</html>

@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+}
+video
+{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -9999;
+    background-size: cover;
+    -webkit-filter: grayscale(20%);
+}
+
+#leftBox
+{
+    margin:0 auto;
+    margin-top:10px;
+    padding:20px 50px;
+    background-color:#00000000;
+    width:800px;
+    height:250px;
+    border-radius:10px;
+    text-align:center;
+}
+
+#leftBox h1
+{
+    color:rgba(192, 192, 192, 0.7);
+    margin-top:10px;
+    font-size:80px;
+    font-family: "方正舒体";
+}
+
+#leftBox h2
+{
+    color:rgba(192, 192, 192, 0.3);
+    margin-top:10px;
+    font-size:50px;
+    font-family: "Brush Script MT";
+}
+
+
+#bigBox
+{
+    margin:0 auto;
+    margin-top:0px;
+    /* margin-right: 200px; */
+    padding:20px 50px;
+    background-color:#00000090;
+    width:400px;
+    height:350px;
+    border-radius:10px;
+    text-align:center;
+}
+
+#bigBox h1
+{
+    font-family: "方正舒体";
+    color:white;
+}
+
+#bigBox .inputBox
+{
+    margin-top:50px;
+}
+
+#bigBox .inputBox .inputText
+{
+    margin-top:20px;
+}
+
+#bigBox .inputBox .inputText input
+{
+    border:0;
+    padding:10px 10px;
+    border-bottom:1px solid white;
+    background-color:#00000000;
+    color:grey;
+}
+
+#bigBox .inputBox .inputButton
+{
+    border:0;
+    width:150px;
+    height:25px;
+    color:white;
+    margin-top:30px;
+    border-radius:20px;
+    background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+}
