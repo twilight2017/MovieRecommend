@@ -4,135 +4,147 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static "css/register_choose.css" %}">
+    <link rel="stylesheet" href="../static/css/filerecommend.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    
     <title>Choose</title>
-
 </head>
-
+<script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <body>
     <video muted autoplay loop >
         <source src="{{ MEDIA_URL }}register_back.mp4" type="video/mp4">
     </video>
+    <div id="inputBox">
+        <div class="inputText">
+            <form action={% url 'SEARCH' %} method="get">
+                <input type="text" name="search" placeholder="输入电影名称、导演或者演员，快速检索电影" />
+                <button type="submit" class="inputButton" >搜索</button>
+            </form>
+        </div>
+    </div>
+    </div>
     <div id="bigBox">
-        <h1>请选择至少一部您喜欢的电影</h1>
-                <form action={% url 'CHOOSE' %} method="POST">
-                    {% csrf_token %}
-            <ul class="box">
+        <h1>根据您的兴趣，我们为您推荐以下电影</h1>
+            <ul class="box listchange1">
                 <li>
                     <td>
                         <img src="{% static "img/fangniuban.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='fangniuban' value='fangniuban'>放牛班的春天</p>
+                        <p>放牛班的春天</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/green_book.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='green_book' value='green_book'>绿皮书</p>
+                        <p>绿皮书</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/iron_man.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='iron_man' value='iron_man'>钢铁侠</p>
+                        <p>钢铁侠</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/robot.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='robot' value='robot'>机器人总动员</p>
+                        <p>机器人总动员</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/beautiful_mind.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='beautiful_mind' value='beautiful_mind'>美丽心灵</p>
+                        <p>美丽心灵</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/flipped.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='flipped' value='flipped'>怦然心动</p>
+                        <p>怦然心动</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/wujiandao.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='无间道' value='无间道'>无间道</p>
+                        <p>无间道</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/gone_girl.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='gone_girl' value='gone_girl'>消失的爱人</p>
+                        <p>消失的爱人</p>
                     </td>
                 </li>
             </ul>
-            <ul class="box">
+            <ul class="box listchange2">
                 <li>
                     <td>
                         <img src="{% static "img/bawangbieji.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='霸王别姬' value='霸王别姬'>霸王别姬</p>
+                        <p>霸王别姬</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/jishengchong.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='寄生虫' value='寄生虫'>寄生虫</p>
+                        <p>寄生虫</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/fast_furious.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='fast_furious' value='fast_furious'>速度与激情</p>
+                        <p>速度与激情</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/tangrenjie.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='唐人街探案' value='唐人街探案'>唐人街探案</p>
+                        <p>唐人街探案</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/medicine_god.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='medicine_god' value='medicine_god'>我不是药神</p>
+                        <p>我不是药神</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/liulangdiqiu.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='流浪地球' value='流浪地球'>流浪地球</p>
+                        <p>流浪地球</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/dahufa.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='大护法' value='大护法'>大护法</p>
+                        <p>大护法</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/forrest_gump.jpg" %}" align="bottom">
-                        <p><input type="checkbox" class="check_box" name='forrest_gump' value='forrest_gump'>阿甘正传</p>
+                        <p>阿甘正传</p>
                     </td>
                 </li>
             </ul>
-            <button type="submit" class="inputButton" >选好了，开启电影之旅</button>
-        </form>
+            <div><button class="inputButton" >换一批</button></div>
     </div>
-<script>
-$(".inputButton").click(function(){
-    if($("input[class='check_box']:checked").length == 0)
 
-    {
-        alert("请至少选择一部您喜爱的电影！");
-        return false;
-    }
-});
-    </script>
+<script>    
+    //代表第一次换的是第二组
+    var listitem = 2;
+    //这是要换的批数
+    var listitemmax = 2;
+    $(".inputButton").click(function() {
+
+        $(".listchange" + listitem).siblings("ul").css("display", "none");
+        $(".listchange" + listitem).css("display", "flex");
+        if (listitem < listitemmax) {
+            listitem++;
+        } else {
+            listitem = 1;
+        }
+    });
+    
+</script>
 </body>
-
 </html>

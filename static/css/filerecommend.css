@@ -1,0 +1,126 @@
+body{
+    margin: 0;
+}
+video
+{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -9999;
+    background-size: cover;
+    -webkit-filter: grayscale(20%);
+}
+
+#bigBox
+{
+    margin:0 auto;
+    margin-top:0px;
+    padding:20px 50px;
+    background-color:#00000000;
+    width:1200px;
+    height:700px;
+    border-radius:10px;
+    text-align:center;
+}
+
+#bigBox h1
+{
+    font-family: "方正姚体";
+    margin-top:40px;
+    color:white;
+}
+
+ul,li{ 
+    padding:0; 
+    margin:0; 
+    overflow:hidden;
+}
+li{ 
+    list-style:none;
+}
+.box{ 
+    display: flex;
+    width:1200px;
+    margin-top:60px;
+}
+.box li{ 
+    float:left; 
+    width:100px; 
+    height:180px; 
+    margin-right:42px;
+    flex:1;
+}
+
+.listchange2{
+    display: none;
+}
+#bigBox img
+{
+    width:100px;
+    height:150px;
+    border: #00000090;
+}
+
+#bigBox p
+{
+    color:rgba(255,255,255,0.8);
+}
+
+#bigBox .inputButton
+{
+    border:0;
+    width:300px;
+    height:50px;
+    color:white;
+    margin-top:30px;
+    border-radius:20px;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
+#inputBox
+{
+    margin:0 auto;
+    margin-top:10px;
+    padding:0px 0px;
+    background-color:#00000000;
+    width:1200px;
+    height:100px;
+    border-radius:10px;
+    text-align:center;
+}
+
+#inputBox .inputText
+{
+    margin-top: 0px;
+    
+    position: relative;
+}
+
+#inputBox .inputText input
+{
+    border:0;
+    margin-top:0px;
+    padding:0px 0px;
+    width:800px;
+    height:50px;
+    padding:10px 10px;
+    border-bottom:1px solid white;
+    background-color:#00000000;
+    color:white;
+}
+
+#inputBox .inputButton
+{
+    border:0;
+    margin-left: 50px;
+    width:100px;
+    height:50px;
+    color:white;
+    margin-top:30px;
+    border-radius:20px;
+    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+}

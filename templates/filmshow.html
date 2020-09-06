@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/css/filmshow.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+        <title>filmshow</title>
+        
+    </head>
+    <body>
+        <video autoplay loop poster="polina.jpg" class="bgvid" id="bgvid">
+            <source src="../media/login_back.mp4" type="video/mp4">
+        </video>
+        <div id="leftBox">
+            <h1>Ask Movie</h1>
+            <h2>Like movie just like like your liker</h2>
+        </div>
+        <div id="bigBox">
+            <h1>电影简介</h1>
+            <div class="inputBox">
+                <li>
+                    <img src="../static/img/fangniuban.jpg" align="bottom">
+                    <p>片名：辣鸡生产实习</p>
+                    <p>导演：高培杰</p>
+                    <p>主要演员：郭灿城、刘梓瑄、林雨嘉、邢煜梓、闫宇</p>
+                    <p>剧情介绍：六个人费尽心思瞎搞网站的痛苦经历</p>
+                    <p>豆瓣评分：10</p>
+                    <form action="" method="get">
+                        <p>您是否喜欢该电影：
+                        <input type="checkbox" name="">喜欢
+                        <input type="checkbox" name="no" >不喜欢
+                        </p>
+                        <p>您可以为该电影评分(1到10分)：
+                        <div class="inputText">
+                            <input type="text" name="score" placeholder="请输入评分">
+                        </div>
+                        <button type="submit" class="inputButton" >确定</button>
+                    </form>
+                    </p>
+                </li>
+            </div>
+        </div>   
+    </body>
+</html>
