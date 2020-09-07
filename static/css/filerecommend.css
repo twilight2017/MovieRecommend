@@ -29,28 +29,28 @@ video
 
 #bigBox h1
 {
-    font-family: "方正姚体";
+    font-family: "æ–¹æ­£å§šä½“";
     margin-top:40px;
     color:white;
 }
 
-ul,li{ 
-    padding:0; 
-    margin:0; 
+ul,li{
+    padding:0;
+    margin:0;
     overflow:hidden;
 }
-li{ 
+li{
     list-style:none;
 }
-.box{ 
+.box{
     display: flex;
     width:1200px;
     margin-top:60px;
 }
-.box li{ 
-    float:left; 
-    width:100px; 
-    height:180px; 
+.box li{
+    float:left;
+    width:100px;
+    height:180px;
     margin-right:42px;
     flex:1;
 }
@@ -81,6 +81,17 @@ li{
     background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
 }
 
+#bigBox .beginButton
+{
+    border:0;
+    width:300px;
+    height:50px;
+    color:white;
+    margin-top:30px;
+    border-radius:20px;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
 #inputBox
 {
     margin:0 auto;
@@ -93,10 +104,17 @@ li{
     text-align:center;
 }
 
+#pic
+{
+    margin-left:20px;
+    width:50px;
+    height:50px;
+}
+
 #inputBox .inputText
 {
     margin-top: 0px;
-    
+
     position: relative;
 }
 
@@ -113,14 +131,28 @@ li{
     color:white;
 }
 
-#inputBox .inputButton
+
+
+#inputBox .searchButton1
 {
     border:0;
-    margin-left: 50px;
-    width:100px;
+    margin-left: 0px;
+    width:70px;
     height:50px;
     color:white;
     margin-top:30px;
     border-radius:20px;
     background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+}
+
+#inputBox .searchButton2
+{
+    border:0;
+    margin-left: 0px;
+    width:70px;
+    height:50px;
+    color:white;
+    margin-top:30px;
+    border-radius:20px;
+    background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
 }

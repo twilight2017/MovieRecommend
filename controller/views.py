@@ -1,3 +1,5 @@
+import socket
+
 from django.shortcuts import render
 from .models import Users
 from django.contrib import auth
@@ -6,7 +8,8 @@ from django.contrib.auth import login as LOGIN
 from django.contrib.auth import logout as LOGOUT
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate
-
+import os
+from controller import test
 
 # Create your views here.
 def welcome(request):
@@ -60,7 +63,8 @@ def register(request):
                 info.user_password = u_password
                 info.save()
                 result = 'success'
-                return render(request, 'register.html', {'result': result})
+                request.session['id']=info.user_name
+                return render(request, 'register_choose.html', {'result': result})
         else:
             # 两次输入密码不一致
             result = 'error'
@@ -71,4 +75,30 @@ def register(request):
 
 
 def choose(request):
+    if request.method == 'GET':
+        return render(request, 'filerecommend.html')
+    elif request.method == 'POST' and request.POST:
+        u_id = request.session.get('id')
+        favor = request.POST.getlist('favor_movie')
+        favor = list(map(str, favor))
+        Users.objects.filter(user_name=u_id).update(favor_movie = favor)
+        return render(request, 'filerecommend.html')
     return render(request, 'register_choose.html')
+
+
+#  搜索电影
+
+
+def search(request):
+    if request.method == 'POST':
+        # os.system('D:\study\ProDesign\dist\yuyin.exe ')
+        u_id = request.session.get('id')
+        print(u_id)
+        user = Users.objects.get(user_name=u_id)
+        reference = user.favor_movie[0]
+        listRes = []
+        listRes = test.recommend('Godfather')
+        print(listRes)
+        request.close()
+        return render(request, 'filerecommend.html', {'film_list': listRes})
+    return render(request, 'filerecommend.html')

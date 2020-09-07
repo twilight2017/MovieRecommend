@@ -11,18 +11,18 @@
     <title>Choose</title>
 </head>
 <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-<body>
-    <video muted autoplay loop >
-        <source src="{{ MEDIA_URL }}register_back.mp4" type="video/mp4">
-    </video>
+<body background="{% static "img/meiguo_back.jpg" %}">
     <div id="inputBox">
         <div class="inputText">
-            <form action={% url 'SEARCH' %} method="get">
-                <input type="text" name="search" placeholder="输入电影名称、导演或者演员，快速检索电影" />
-                <button type="submit" class="inputButton" >搜索</button>
+            <form action={% url 'SEARCH' %} method="POST">
+                {% csrf_token %}
+                <input type="text" name="content" placeholder="输入电影名称、导演或者演员，快速检索电影" />
+                <button type="submit" name="search" class="searchButton1" >搜索</button>
+                <button class="searchButton2" name="yuyin">语音搜索</button>
+                <button class="searchButton2" name="star">明星识别</button>
+                <button class="searchButton2" name="motion">情绪匹配</button>
             </form>
         </div>
-    </div>
     </div>
     <div id="bigBox">
         <h1>根据您的兴趣，我们为您推荐以下电影</h1>
@@ -30,49 +30,49 @@
                 <li>
                     <td>
                         <img src="{% static "img/fangniuban.jpg" %}" align="bottom">
-                        <p>放牛班的春天</p>
+                        <p>{{ film_list.0 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/green_book.jpg" %}" align="bottom">
-                        <p>绿皮书</p>
+                        <p>{{ film_list.1 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/iron_man.jpg" %}" align="bottom">
-                        <p>钢铁侠</p>
+                        <p>{{ film_list.2 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/robot.jpg" %}" align="bottom">
-                        <p>机器人总动员</p>
+                        <p>{{ film_list.3 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/beautiful_mind.jpg" %}" align="bottom">
-                        <p>美丽心灵</p>
+                        <p>{{ film_list.4 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/flipped.jpg" %}" align="bottom">
-                        <p>怦然心动</p>
+                        <p>{{ film_list.5 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/wujiandao.jpg" %}" align="bottom">
-                        <p>无间道</p>
+                        <p>{{ film_list.6 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/gone_girl.jpg" %}" align="bottom">
-                        <p>消失的爱人</p>
+                        <p>{{ film_list.7 }}</p>
                     </td>
                 </li>
             </ul>
@@ -80,53 +80,60 @@
                 <li>
                     <td>
                         <img src="{% static "img/bawangbieji.jpg" %}" align="bottom">
-                        <p>霸王别姬</p>
+                        <p>{{ film_list.8 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/jishengchong.jpg" %}" align="bottom">
-                        <p>寄生虫</p>
+                        <p>{{ film_list.9 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/fast_furious.jpg" %}" align="bottom">
-                        <p>速度与激情</p>
+                        <p>{{ film_list.10 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/tangrenjie.jpg" %}" align="bottom">
-                        <p>唐人街探案</p>
+                        <p>{{ film_list.11 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/medicine_god.jpg" %}" align="bottom">
-                        <p>我不是药神</p>
+                        <p>{{ film_list.12 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/liulangdiqiu.jpg" %}" align="bottom">
-                        <p>流浪地球</p>
+                        <p>{{ film_list.13 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/dahufa.jpg" %}" align="bottom">
-                        <p>大护法</p>
+                        <p>{{ film_list.14 }}</p>
                     </td>
                 </li>
                 <li>
                     <td>
                         <img src="{% static "img/forrest_gump.jpg" %}" align="bottom">
-                        <p>阿甘正传</p>
+                        <p>{{ film_list.15 }}</p>
                     </td>
                 </li>
             </ul>
-            <div><button class="inputButton" >换一批</button></div>
+            <div>
+                <form action={% url 'SEARCH' %} method="post">
+                    {% csrf_token %}
+                <button class="beginButton" >开始推荐</button>
+                </form>
+                <button class="inputButton" >换一批</button>
+            </div>
+
     </div>
 
 <script>    
