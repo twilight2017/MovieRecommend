@@ -10,6 +10,8 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate
 import os
 from controller import test
+from controller.OpenCV_Motion import main
+import webbrowser
 
 # Create your views here.
 def welcome(request):
@@ -87,18 +89,38 @@ def choose(request):
 
 
 #  搜索电影
+def openbrowser(text):
+    maps = {
+        '百度': ['百度', 'baidu'],
+        '腾讯': ['腾讯', 'tengxun'],
+        '网易': ['网易', 'wangyi']
+
+    }
+    if text in maps['百度']:
+        webbrowser.open_new_tab('https://www.baidu.com')
+    elif text in maps['腾讯']:
+        webbrowser.open_new_tab('https://www.qq.com')
+    elif text in maps['网易']:
+        webbrowser.open_new_tab('https://www.163.com/')
+    else:
+        webbrowser.open_new_tab('https://www.baidu.com/s?wd=%s' % text)
 
 
 def search(request):
-    if request.method == 'POST':
-        # os.system('D:\study\ProDesign\dist\yuyin.exe ')
+    if request.method == 'POST' and 'yuyin' in request.POST:
+        os.system('D:\study\ProDesign\dist\yuyin.exe ')
+        return render(request, 'filerecommend.html')
+    elif request.method == 'POST' and 'motion' in request.POST:
+        main.main
+        return render(request, 'filerecommend.html')
+    elif request.method == 'POST' and 'search' in request.POST:
+        cont = request._post.get('content')
+        openbrowser(cont)
+    elif request.method == 'POST':
         u_id = request.session.get('id')
-        print(u_id)
         user = Users.objects.get(user_name=u_id)
         reference = user.favor_movie[0]
-        listRes = []
         listRes = test.recommend('Godfather')
-        print(listRes)
         request.close()
         return render(request, 'filerecommend.html', {'film_list': listRes})
     return render(request, 'filerecommend.html')
